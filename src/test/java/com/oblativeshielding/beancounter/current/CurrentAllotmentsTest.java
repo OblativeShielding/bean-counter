@@ -62,7 +62,7 @@ public class CurrentAllotmentsTest {
     ca.addFunds(3500, "T1");
     InsufficientFundsException thrown = assertThrows(
       InsufficientFundsException.class, () -> ca.removeFunds(4000, "T1"));
-      
+    System.out.println(thrown.getMessage());
   }
 
 }

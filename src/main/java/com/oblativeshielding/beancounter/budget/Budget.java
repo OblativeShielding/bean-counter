@@ -8,20 +8,37 @@ import java.util.ArrayList;
  */
 public class Budget {
   
-  // list of budget partitions
-  private ArrayList<BudgetPartition> partitions;
+  // list of budget elements
+  private final ArrayList<BudgetElement> elements;
   // display name
   private String displayName;
 
   /**
-   * Create a new budget from scratch.
+   * Create a new budget with the given display name.
    */
-  public Budget() {
+  public Budget(String budgetName) {
+
+    this.elements = new ArrayList<>();
+    this.displayName = budgetName;
 
   }
 
   /**
-   * Create a budget from a file.
+   * Add an element to the budget.
    */
-  
+  public void addElement(BudgetElement newElement) {
+    //TODO add some overflow check
+    elements.add(newElement);
+  }
+
+  /** Gets display name. */
+  public String getDisplayName() {
+    return displayName;
+  }
+
+  /** Sets display name. */
+  public void setDisplayName(String name) {
+    displayName = name;
+  }
+
 }

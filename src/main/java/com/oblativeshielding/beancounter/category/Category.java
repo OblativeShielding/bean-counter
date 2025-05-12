@@ -4,7 +4,7 @@ package com.oblativeshielding.beancounter.category;
 import javafx.scene.paint.Color;
 
 /**
- * Abstract parent class for money categories.
+ * Class for allotment or budget categories.
  */
 public abstract class Category implements Comparable<Category> {
   

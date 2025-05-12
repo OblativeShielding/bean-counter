@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.oblativeshielding.beancounter.gui.BalancePanel?>
+<?import com.oblativeshielding.beancounter.gui.BudgetPanel?>
+<?import com.oblativeshielding.beancounter.gui.HistoryPanel?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oblativeshielding.beancounter.gui.MainController">
+   <tabs>
+      <Tab text="Balance" closable="false">
+         <content>
+            <VBox>
+               <Label text="Current Balance and Allotments" style="-fx-font-size: 18px"/>
+               <BalancePanel fx:id="balancePanel"/>
+               <HBox>
+                  <Button fx:id="logExpenseButton" onAction="#logExpense">Log an Expense</Button>
+                  <Button fx:id="addFundsButton" onAction="#addFunds">Add Funds</Button>
+                  <Button fx:id="reallocateButton" onAction="#reallocate">Re-Allocate Funds</Button>
+                  <Button fx:id="newCategoryButton" onAction="#newCategory">New Category</Button>
+                  <Button fx:id="printButton" onAction="#printCurrent">Print</Button>
+               </HBox>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Budget" closable="false">
+         <content>
+            <VBox>
+               <Label text="Budget" style="-fx-font-size: 18px"/>
+               <BudgetPanel fx:id="budgetPanel"/>
+               <HBox>
+                  <Button fx:id="saveBudgetButton" onAction="#saveBudget">Save</Button>
+                  <Button fx:id="loadBudgetButton" onAction="#loadBudget">Load</Button>
+                  <Button fx:id="newBudgetButton" onAction="#newBudget">New</Button>
+               </HBox>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="History" closable="false">
+         <content>
+            <VBox>
+               <Label text="History" style="-fx-font-size: 18px"/>
+               <HistoryPanel fx:id="historyPanel"/>
+               <HBox>
+                  <Button fx:id="clearHistoryButton" onAction="#clearHistory">Clear History</Button>
+               </HBox>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

@@ -5,5 +5,8 @@ module com.oblativeshielding {
     requires javafx.base;
 
     opens com.oblativeshielding.beancounter to javafx.fxml;
+    opens com.oblativeshielding.beancounter.gui to javafx.fxml;
     exports com.oblativeshielding.beancounter;
+    exports com.oblativeshielding.beancounter.gui to javafx.fxml;
+    exports com.oblativeshielding.beancounter.category;
 }

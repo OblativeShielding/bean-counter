@@ -9,8 +9,8 @@ public class NonexistentAllotmentException extends RuntimeException {
   /**
    * Constructor for NonexistentAllotmentException.
    */
-  public NonexistentAllotmentException(String message) {
-    super(message);
+  public NonexistentAllotmentException(String refId) {
+    super("No allotment with reference ID " + refId + " found.");
   }
 
 }

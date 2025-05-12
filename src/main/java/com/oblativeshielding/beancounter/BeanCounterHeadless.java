@@ -21,6 +21,7 @@ public class BeanCounterHeadless {
       addc - adds a new category
       addf - adds funds to a selected category
       disp - prints a list of categories, allotments, and funds
+      quit - exit the program
       """;
 
   /**

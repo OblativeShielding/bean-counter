@@ -76,9 +76,9 @@ public class CurrentAllotments {
    * 
    * @return an int equal to the amount of the allotment requested, -1 if not found
    */
-  public int getAllotmentAmount(String categoryId) {
+  public int getAllotmentAmount(String categoryId) throws NonexistentAllotmentException {
     if(!allotments.containsKey(categoryId)) {
-      return -1;
+      throw new NonexistentAllotmentException(categoryId);
     } else {
       return allotments.get(categoryId);
     }
@@ -90,10 +90,10 @@ public class CurrentAllotments {
    * 
    * @return a double from 0.0 to 1.0 indicating the fraction of the whole, -1.0 if not found
    */
-  public double getAllotmentFraction(String categoryId) {
+  public double getAllotmentFraction(String categoryId) throws NonexistentAllotmentException {
 
     if(!allotments.containsKey(categoryId)) {
-      return -1.0;
+      throw new NonexistentAllotmentException(categoryId);
     } else {
       return (double) allotments.get(categoryId) / (double) getTotal();
     }
